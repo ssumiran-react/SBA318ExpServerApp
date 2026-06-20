@@ -337,4 +337,4 @@ const standings = [
 
 ]
 
-
+export default standings;

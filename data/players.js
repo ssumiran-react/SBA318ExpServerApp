@@ -5,7 +5,7 @@ const players = [
         "lastName": "Anunoby",
         "teamId" : "NYK",
         "number" : 8,
-        "position": [F,G],
+        "position": ["F","G"],
         "height" : 6.7,
         "weight" : 240
     },
@@ -15,7 +15,7 @@ const players = [
         "lastName": "Bridges",
         "teamId" : "NYK",
         "number" : 25,
-        "position": [F,G],
+        "position": ['F','G'],
         "height" : 6.6,
         "weight" : 209
     },
@@ -25,7 +25,7 @@ const players = [
         "lastName": "Brunson",
         "teamId" : "NYK",
         "number" : 11,
-        "position": [G],
+        "position": ['G'],
         "height" : 6.2,
         "weight" : 190
     },
@@ -35,7 +35,7 @@ const players = [
         "lastName": "Clarkson",
         "teamId" : "NYK",
         "number" : 0,
-        "position": [G],
+        "position": ['G'],
         "height" : 6.5,
         "weight" : 194
     },
@@ -45,7 +45,7 @@ const players = [
         "lastName": "Hart",
         "teamId" : "NYK",
         "number" : 3,
-        "position": [G],
+        "position": ['G'],
         "height" : 6.5,
         "weight" : 215
     },
@@ -55,7 +55,7 @@ const players = [
         "lastName": "Towns",
         "teamId" : "NYK",
         "number" : 32,
-        "position": [F,C],
+        "position": ['F','C'],
         "height" : 7.0,
         "weight" : 248
     },
@@ -65,7 +65,7 @@ const players = [
         "lastName": "Tatum",
         "teamId" : "BOS",
         "number" : 0,
-        "position": [F,G],
+        "position": ['F','G'],
         "height" : 6.8,
         "weight" : 210
     },
@@ -75,7 +75,7 @@ const players = [
         "lastName": "Brown",
         "teamId" : "BOS",
         "number" : 7,
-        "position": [F,G],
+        "position": ['F','G'],
         "height" : 6.6,
         "weight" : 223
     },
@@ -85,7 +85,7 @@ const players = [
         "lastName": "Tonje",
         "teamId" : "BOS",
         "number" : 8,
-        "position": [G],
+        "position": ['G'],
         "height" : 6.4,
         "weight" : 218
     },
@@ -95,7 +95,7 @@ const players = [
         "lastName": "White",
         "teamId" : "BOS",
         "number" : 9,
-        "position": [G],
+        "position": ['G'],
         "height" : 6.4,
         "weight" : 190
     },
@@ -105,7 +105,7 @@ const players = [
         "lastName": "Pritchard",
         "teamId" : "BOS",
         "number" : 11,
-        "position": [G],
+        "position": ['G'],
         "height" : 6.1,
         "weight" : 195
     },    
@@ -115,7 +115,7 @@ const players = [
         "lastName": "Castle",
         "teamId" : "SAS",
         "number" : 5,
-        "position": [G],
+        "position": ['G'],
         "height" : 6.6,
         "weight" : 215
     },
@@ -125,7 +125,7 @@ const players = [
         "lastName": "Fox",
         "teamId" : "SAS",
         "number" : 4,
-        "position": [G],
+        "position": ['G'],
         "height" : 6.3,
         "weight" : 185
     },
@@ -135,7 +135,7 @@ const players = [
         "lastName": "Wembanyama",
         "teamId" : "SAS",
         "number" : 1,
-        "position": [F,C],
+        "position": ['F','C'],
         "height" : 7.4,
         "weight" : 235
     },
@@ -145,7 +145,7 @@ const players = [
         "lastName": "Alexander",
         "teamId" : "NOP",
         "number" : 23,
-        "position": [G],
+        "position": ['G'],
         "height" : 6.5,
         "weight" : 185
     },
@@ -155,7 +155,7 @@ const players = [
         "lastName": "Bey",
         "teamId" : "NOP",
         "number" : 41,
-        "position": [G,F],
+        "position": ['G','F'],
         "height" : 6.8,
         "weight" : 215
     },
@@ -165,7 +165,7 @@ const players = [
         "lastName": "Dickinson",
         "teamId" : "NOP",
         "number" : 4,
-        "position": [C],
+        "position": ['C'],
         "height" : 7.1,
         "weight" : 255
     },
@@ -175,7 +175,7 @@ const players = [
         "lastName": "Fears",
         "teamId" : "NOP",
         "number" : 0,
-        "position": [G],
+        "position": ['G'],
         "height" : 6.3,
         "weight" : 190
     },
@@ -185,7 +185,7 @@ const players = [
         "lastName": "Hawkins",
         "teamId" : "NOP",
         "number" : 24,
-        "position": [G],
+        "position": ['G'],
         "height" : 6.5,
         "weight" : 190
     },
@@ -195,7 +195,7 @@ const players = [
         "lastName": "Jones",
         "teamId" : "NOP",
         "number" : 2,
-        "position": [F],
+        "position": ['F'],
         "height" : 6.7,
         "weight" : 206
     },
@@ -205,9 +205,10 @@ const players = [
         "lastName": "Jordan",
         "teamId" : "NOP",
         "number" : 9,
-        "position": [C],
+        "position": ['C'],
         "height" : 6.11,
         "weight" : 265
     },
 
 ]
+export default players;
