@@ -159,7 +159,7 @@
 
                                 <label class="form-label">Weight</label>
                                 <input type="number" class="form-control" id="weight"
-                                    name="height">
+                                    name="weight">
                             </div>
                             <div class="mb-3">
                                 <label class="form-label">Position</label>
@@ -203,7 +203,7 @@
     document.getElementById("btnCreate").addEventListener('click', async () => {
         const formData = new FormData(document.getElementById('myForm'));
         const data = Object.fromEntries(formData.entries());
-        //console.log("inDelete",typeof data.idNum);
+        //console.log("btnCreate",typeof data.idNum);
         if (firstName && lastName && teamId) {
             const res = await fetch('http://localhost:3000/players/', {
                 method: 'POST',
@@ -226,7 +226,7 @@
     document.getElementById("btnUpdate").addEventListener('click', async () => {
         const formData = new FormData(document.getElementById('myForm'));
         const data = Object.fromEntries(formData.entries());
-        //console.log("inDelete",typeof data.idNum);
+        console.log( data.height," btnUpdate ",data.height);
         if(data.idNum != ""){
             const res = await fetch('http://localhost:3000/players/', {
                 method: 'PUT',
@@ -238,7 +238,7 @@
                 document.getElementById("btnClear").click();
                 alert("Player is successfully Updated.");
             }
-            if(await res.status == 400){
+            if(await res.status == 404){
                 alert("Player information is not completed.");
             }
         }else{

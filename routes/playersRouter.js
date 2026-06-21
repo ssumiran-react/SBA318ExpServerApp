@@ -10,27 +10,23 @@ router.route("/:teamId")
         //console.log(req.params.teamId, "teamPlayers", teamPlayers[0].id);
         res.render('players', { teamPlayers });
     })
-    .delete((req, res, next) => {  //console.log(req.params.teamId, " players ");
-        //const {m}= req.body.m;
-        //console.log(" players ",m);
-    });
 
 router.route("/")
-    .get((req, res) => { console.log("tlayers ", req.query.teamId);
-        if (req.query.teamId == undefined){
+    .get((req, res) => { //console.log("tlayers ", req.query.teamId);
+        if (req.query.teamId == undefined || req.query.teamId == ""){
             teamPlayers = players;
         }else{ 
             teamPlayers = players.filter((p) => p.teamId == req.query.teamId)
-        }
-        
+        }        
         res.render('players', { teamPlayers });
     })
+
     .post((req, res, next) => { 
         const {firstName, height, weight, idNum, lastName, number, position, teamId} = req.body;
-        
-        if (firstName && lastName && teamId) {
+        console.log(weight, " new P: ",height);
+        if (firstName && lastName && teamId) { 
             const p = {
-                id: posts[posts.length - 1].id + 1,
+                id: players[players.length - 1].id + 1,
                 firstName: firstName,
                 lastName: lastName,
                 teamId: teamId,
@@ -39,7 +35,7 @@ router.route("/")
                 height: height,
                 weight: weight
             };
-
+            
             players.push(p);
             res.json("Player is added");
         } else {
@@ -48,18 +44,23 @@ router.route("/")
 
     })
 
-    .patch((req, res, next) => {
-        const post = posts.find((p, i) => {
-        if (p.id == req.params.id) {
-            for (const key in req.body) {
-            posts[i][key] = req.body[key];
+    .put((req, res, next) => {
+        const {firstName, height, weight, idNum, lastName, number, position, teamId} = req.body;
+        console.log(weight, " .put P: ",height);
+        const player = players.find((p, i) => {
+        if (p.id == idNum) {
+            for (const key in req.body) { console.log (players[i][key] , "  "+key+"  ",req.body[key])
+                players[i][key] = req.body[key];
             }
             return true;
         }
         });
 
-        if (post) res.json(post);
-        else next();
+        if (player) {
+            res.json("Player is updated");
+        } else {
+            next(error(404, "Update is failed"));
+        }
     })
 
     .delete((req, res, next) => { 
