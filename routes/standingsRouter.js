@@ -15,13 +15,13 @@ router.route("/")
                 if (Object.keys(i) == yr) {
                     const team = teams.find(t => t.id == s.id);
                     wl = { "id": s.id, "team": team.name, "conference": team.conference, "win": i[yr].win, "lost": i[yr].lost, "year": yr };
-                    console.log("in wl ", wl);
+                    //console.log("in wl ", wl);
                     break;
                 }
             }
             if (wl != undefined)
                 wls.push(wl);
-            console.log("in wls ", wls);
+            //console.log("in wls ", wls);
         })
         //console.log ("in year ",standingsFlat[0].years[0][2026].win);
 
@@ -56,12 +56,8 @@ router.route("/")
             { key: "win", order: "desc" },
             { key: "lost", order: "asc" }
         ])
-
-
-
-        
+       
         res.render('standings', { wlStandings });
-
     })
 
 // 404 Middleware
