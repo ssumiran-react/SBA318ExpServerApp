@@ -5,10 +5,25 @@ const router = express.Router();
 let teamPlayers;
 
 router.route("/:teamId")
-    .get((req, res) => {
-        teamPlayers = players.filter((p) => p.teamId == req.params.teamId)
-        //console.log(req.params.teamId, "teamPlayers", teamPlayers[0].id);
-        res.render('players', { teamPlayers });
+    .get((req, res) => { 
+        if (req.params.teamId != undefined || req.params.teamId != ""){
+            
+            if (req.query.number != undefined ){ 
+                teamPlayers = players.filter((p) => p.teamId == req.params.teamId)
+                                    .filter((p) => p.number == req.query.number);
+            }else{ 
+                teamPlayers = players.filter((p) => p.teamId == req.params.teamId);
+            }   
+
+        }else{ console.log(" in ess ");
+            teamPlayers = [];
+        } 
+        
+        if (teamPlayers){ 
+            res.render('players', { teamPlayers });
+        }else {
+            next(error(404, "Players Not Found"));
+        }
     })
 
 router.route("/")
@@ -16,14 +31,19 @@ router.route("/")
         if (req.query.teamId == undefined || req.query.teamId == ""){
             teamPlayers = players;
         }else{ 
-            teamPlayers = players.filter((p) => p.teamId == req.query.teamId)
-        }        
-        res.render('players', { teamPlayers });
+            teamPlayers = players.filter((p) => p.teamId == req.query.teamId);
+        } 
+
+        if (teamPlayers){
+            res.render('players', { teamPlayers });
+        }else {
+            next(error(404, "Insufficient Data"));
+        }
     })
 
     .post((req, res, next) => { 
         const {firstName, height, weight, idNum, lastName, number, position, teamId} = req.body;
-        console.log(weight, " new P: ",height);
+        //console.log(weight, " new P: ",height);
         if (firstName && lastName && teamId) { 
             const p = {
                 id: players[players.length - 1].id + 1,
@@ -46,14 +66,14 @@ router.route("/")
 
     .put((req, res, next) => {
         const {firstName, height, weight, idNum, lastName, number, position, teamId} = req.body;
-        console.log(weight, " .put P: ",height);
+        //console.log(weight, " .put P: ",height);
         const player = players.find((p, i) => {
-        if (p.id == idNum) {
-            for (const key in req.body) { console.log (players[i][key] , "  "+key+"  ",req.body[key])
-                players[i][key] = req.body[key];
+            if (p.id == idNum) {
+                for (const key in req.body) { 
+                    players[i][key] = req.body[key];
+                }
+                return true;
             }
-            return true;
-        }
         });
 
         if (player) {
