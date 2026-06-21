@@ -247,9 +247,12 @@
     })
 
     document.getElementById("btnDelete").addEventListener('click', async () => {
+        
         const formData = new FormData(document.getElementById('myForm'));
         const data = Object.fromEntries(formData.entries());
-        //console.log("inDelete",typeof data.idNum);
+        
+        //prompt(`Are you sure want to delete this user ${data.firstName} ${data.lastName} ?`);
+        
         if(data.idNum != ""){
             const res = await fetch('http://localhost:3000/players/', {
                 method: 'DELETE',

@@ -61,7 +61,6 @@ router.route("/")
         } else {
             next(error(400, "Insufficient Data"));
         }
-
     })
 
     .put((req, res, next) => {
@@ -96,9 +95,9 @@ router.route("/")
         teamPlayers = players;
 
         if (player) { //console.log(" o rend ",players)
-             res.render('players', { teamPlayers });
+            res.render('players', { teamPlayers });
         }else{
-          next();
+            next();
         }
     });
 
