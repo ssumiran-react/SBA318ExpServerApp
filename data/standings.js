@@ -7,6 +7,12 @@ const standings = [
                     "win": 56,
                     "lost": 26
                 }
+            },
+            {
+                "2025": {
+                    "win": 70,
+                    "lost": 12
+                }
             }
         ]
     },

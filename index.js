@@ -2,6 +2,7 @@ import express from "express";
 import ejs from "ejs";
 import teamsRouter from "./routes/teamsRouter.js";
 import playersRouter from "./routes/playersRouter.js";
+import standingsRouter from "./routes/standingsRouter.js";
 
 const port = 3000;
 const app = express();
@@ -11,6 +12,7 @@ app.set('view engine', 'ejs');
 
 app.use("/teams", teamsRouter);
 app.use("/players", playersRouter);
+app.use("/standings", standingsRouter);
 
 app.get("/home", (req, res)=>{
     //res.render('teams', { message: 'Hello World'  })
